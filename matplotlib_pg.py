@@ -1,7 +1,10 @@
 from matplotlib import pyplot as plt
 
 def main():
-    # plt.xkcd()
+    plt.xkcd() #sketch-style drawing mode
+
+    plt.style.use('fivethirtyeight')
+    # plt.style.use('ggplot')
 
     ages_x = [18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
                 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55]
@@ -18,8 +21,8 @@ def main():
 
     plt.plot(ages_x, py_dev_y,'d--r', label='Python')#format string used '[marker][line][color]'
 
-    plt.plot(ages_x, js_dev_y, label='JavaScript', color='green', marker='o', linestyle='dashed',
-        linewidth=2, markersize=5)
+    plt.plot(ages_x, js_dev_y, label='JavaScript', color='#444444', marker='o', linestyle='dashed',
+        linewidth=2, markersize=5)#better idea - format string
 
     plt.xlabel('Ages')
     plt.ylabel('Median Salary (USD)')
@@ -28,6 +31,9 @@ def main():
     plt.legend()
 
     plt.tight_layout()
+    # plt.grid(True)
+
+    print(plt.style.available)
 
     plt.savefig('plot.png')
 
