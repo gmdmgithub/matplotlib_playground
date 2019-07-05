@@ -30,7 +30,7 @@ def programLangsPie():
 
     plt.pie(slices, labels=labels, explode=explode, shadow=True,
             startangle=45, autopct='%1.1f%%', # set percentage on the piechart
-            wedgeprops=dict(edgecolor='black'))#made dict from values - nice
+            wedgeprops=dict(edgecolor='black', width=0.7))#made dict from values - nice, adding with we get donut!
 
     plt.title('Language popularity')
 
