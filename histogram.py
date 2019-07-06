@@ -1,6 +1,8 @@
 from matplotlib import pyplot as plt
 import pandas as pd
 
+import numpy as np
+
 
 def simple():
 
@@ -30,7 +32,13 @@ def main():
     #data, bins = simple()
     data, bins = fromFile()
 
-    plt.hist(data, bins=bins, edgecolor='grey')  # beans defined
+    #plt.hist(data, bins=bins, edgecolor='grey')  # beans defined
+
+    plt.hist(data, bins=bins, edgecolor='grey', log=True)# logarithmic scale - good for small numbers
+
+    plt.axvline(np.mean(data),color='red', label='Average age')
+
+    plt.legend()
 
     plt.title('Ages of Respondents')
     plt.xlabel('Ages')
