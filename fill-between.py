@@ -3,6 +3,8 @@ import pandas as pd
 
 
 def simple():
+    plt.style.use('fivethirtyeight')
+
     data = pd.read_csv('data3.csv')
     ages = data['Age']
     dev_salaries = data['All_Devs']
@@ -19,11 +21,11 @@ def simple():
 
     plt.fill_between(ages, py_salaries, overall_median, where=(
         py_salaries > overall_median), interpolate=True,  alpha=0.2)
-    
+
     # different color below the median
 
     plt.fill_between(ages, py_salaries, overall_median, where=(
-            py_salaries < overall_median), color='red', interpolate=True,  alpha=0.2)
+        py_salaries < overall_median), color='red', interpolate=True,  alpha=0.2)
     plt.legend()
 
     plt.title('Median Salary (USD) by Age')
@@ -34,7 +36,10 @@ def simple():
 
     plt.show()
 
+
 def betweenTwo():
+    plt.style.use('fivethirtyeight')
+    
     data = pd.read_csv('data3.csv')
     ages = data['Age']
     py_salaries = data['Python']
@@ -43,12 +48,11 @@ def betweenTwo():
     plt.plot(ages, py_salaries, label='Python')
     plt.plot(ages, js_salaries, label='JavaScript')
 
+    plt.fill_between(ages, py_salaries, js_salaries, where=(
+        py_salaries > js_salaries), interpolate=True,  alpha=0.2, label="Above javascript")
 
     plt.fill_between(ages, py_salaries, js_salaries, where=(
-        py_salaries > js_salaries), interpolate=True,  alpha=0.2)
-
-    plt.fill_between(ages, py_salaries, js_salaries, where=(
-            py_salaries < js_salaries), color='red', interpolate=True,  alpha=0.2)
+        py_salaries < js_salaries), color='red', interpolate=True,  alpha=0.2, label="Below javascript")
     plt.legend()
 
     plt.title('Median Salary (USD) by Age')
@@ -58,6 +62,7 @@ def betweenTwo():
     plt.tight_layout()
 
     plt.show()
+
 
 def main():
 
