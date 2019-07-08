@@ -42,10 +42,9 @@ def simple():
         y_vals.append(random.randint(0, 10))
         plt.cla() # without it color will change
         plt.plot(x_vals, y_vals)
+        plt.tight_layout()
     
     ani = FuncAnimation(plt.gcf(),animate, interval=1000)
-
-    plt.tight_layout()
     # plt.savefig('real-time.png')
     plt.show()
 
