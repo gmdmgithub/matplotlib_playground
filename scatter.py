@@ -24,11 +24,17 @@ def main():
     # x, y, colors = simple()
     x, y, colors = fileData()
 
+    # plt.figure(figsize=(10,6))
+    plt.ylim(0,y.max)
+    plt.xlim(0,x.max)
+
     plt.scatter(x, y, s=150, c=colors, edgecolor='black', cmap='Blues',
                 alpha=0.75, linewidths=1)
 
     cbar = plt.colorbar()
     cbar.set_label('Like/Dislike Ratio')
+
+    
 
     plt.xscale('log')
     plt.yscale('log')
