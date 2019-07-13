@@ -11,6 +11,8 @@ def simple():
     py_salaries = data['Python']
     js_salaries = data['JavaScript']
 
+    # plt.figure(figsize=[6,6])#in inches
+
     plt.plot(ages, dev_salaries, color='#444444',
              linestyle='--', label='All Devs')
 
