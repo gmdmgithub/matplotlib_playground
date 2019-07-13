@@ -15,7 +15,8 @@ def simple():
              linestyle='--', label='All Devs')
 
     plt.plot(ages, py_salaries, label='Python')
-    plt.plot(ages, js_salaries, label='JavaScript')
+    plt.plot(ages, js_salaries, label='JavaScript', color='blue', linewidth=3)
+    plt.text(x=0, y=0, s='Suprising results')
 
     overall_median = 57287
 
@@ -28,7 +29,7 @@ def simple():
         py_salaries < overall_median), color='red', interpolate=True,  alpha=0.2)
     plt.legend()
 
-    plt.title('Median Salary (USD) by Age')
+    plt.title('Median Salary (USD) by Age', fontsize=18)
     plt.xlabel('Ages')
     plt.ylabel('Median Salary (USD)')
 
@@ -66,9 +67,9 @@ def betweenTwo():
 
 def main():
 
-    # simple()
+    simple()
 
-    betweenTwo()
+    # betweenTwo()
 
 
 if __name__ == "__main__":
