@@ -27,13 +27,13 @@ def standadReader():
     return languages, popularity
 
 
-def pandasWay():
+def pandas_way():
     data = pd.read_csv('data2.csv')
 
-    ids = data['Responder_id']
+    # ids = data['Responder_id']
     lang_answers = data['LanguagesWorkedWith']
 
-    language_counter = Counter()
+    language_counter = Counter() 
     for answer in lang_answers:
         language_counter.update(answer.split(";"))
 
@@ -50,13 +50,13 @@ def main():
 
     plt.style.use('fivethirtyeight')
 
-    languages, popularity = pandasWay()  # standadReader()
+    languages, popularity = pandas_way()  # standadReader()
 
     print(languages.reverse(), popularity.reverse())
-
+    #plot bar horizontal 
     plt.barh(languages, popularity)
 
-    # plt.ylabel('Languages')
+    # plt.ylabel('Languages') 
     plt.xlabel('Popularity')
     plt.title('Popularity of programming')
 
